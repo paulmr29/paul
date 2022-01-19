@@ -1,16 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import { Header } from './components/Header';
-import { ProductosLista } from './components/Productos/index';
+import { BrowserRouter as Router } from "react-router-dom";
+import {Paginas} from "./components/Paginas";
 import 'boxicons';
+import { DataProvider } from "./context/Dataprovider";
+import { Carrito } from './components/Carrito';
 
 function App() {
     return ( 
+        <DataProvider>
         <div className = "App">
+        <Router>
         <Header />
-        <ProductosLista />
+        <Carrito />
+        <Paginas />
+        </Router>
         </div>
+        </DataProvider>
     );
 }
 
